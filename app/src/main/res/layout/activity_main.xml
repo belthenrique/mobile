@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".ui.activity.MainActivity">
+
+    <ImageView
+        android:id="@+id/petsup_full_logo"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_marginLeft="16dp"
+        android:src="@drawable/petsup_logo" />
+
+    <TextView
+        android:id="@+id/main_screen_subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="196dp"
+        android:fontFamily="@font/signika_semibold"
+        android:text="Pelo bem-estar do seu melhor amigo"
+        android:textAlignment="center"
+        android:textColor="@color/gray"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/main_screen_login_button"
+        style="@style/main_action_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login" />
+
+    <Button
+        android:id="@+id/main_screen_signup_button"
+        style="@style/main_action_alternate_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CADASTRE-SE" />
+
+</LinearLayout>
