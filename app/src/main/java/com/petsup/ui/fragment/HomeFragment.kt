@@ -6,20 +6,20 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.petsup.databinding.FragmentHomeBinding
 import com.petsup.models.petshop.Petshop
 import com.petsup.ui.adapter.PetshopsAdapter
 import com.petsup.ui.viewmodel.HomeViewModel
 
-class HomeFragment (application: Application): Fragment()  {
+class HomeFragment(application: Application) : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
     private val viewModel = HomeViewModel(application)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         setObservers()
         getPetshops()
     }
@@ -35,6 +35,13 @@ class HomeFragment (application: Application): Fragment()  {
     private fun setObservers() {
         viewModel.petshopList.observe(viewLifecycleOwner) {
             initRecyclerView(it)
+        }
+        viewModel.error.observe(viewLifecycleOwner) {
+            Toast.makeText(
+                activity?.baseContext,
+                it,
+                Toast.LENGTH_LONG
+            ).show()
         }
     }
 

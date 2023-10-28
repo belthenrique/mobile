@@ -20,6 +20,6 @@ class PetListViewModel : ViewModel() {
     }
 
     fun deletePet(idPet: Int) = viewModelScope.launch(Dispatchers.IO) {
-        TODO()
+
     }
 }
